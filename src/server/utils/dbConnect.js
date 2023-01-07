@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 const connection = {};
 
 mongoose.set('strictQuery', true);
-
+ 
 async function dbConnect() {
     if (connection.isConnected) {
         return;
