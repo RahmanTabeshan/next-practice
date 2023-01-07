@@ -9,7 +9,7 @@ async function dbConnect() {
         return;
     }
     
-    const db = await mongoose.connect("mongodb+srv://Rahman:hdZWFSSvllNYuWry@cluster0.kpwzoai.mongodb.net/todoDB?retryWrites=true&w=majority", {
+    const db = await mongoose.connect(process.env.MONGO_URI, {
         useNewUrlParser: true,
         useUnifiedTopology: true,
     });
