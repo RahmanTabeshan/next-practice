@@ -10,8 +10,6 @@ export default function Home({ todos }) {
     const [data, setData] = useState(todos);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(false);
-    console.log(process.env.MONGO_URI) ;
-    console.log(sssss) ;
     const deleteHandler = async (id) => {
         setLoading(true);
         try {
