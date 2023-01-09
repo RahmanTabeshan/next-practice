@@ -5,12 +5,14 @@ import TodoList from "@/components/todoList/todoList";
 import Layout from "@/containers/layout/layout";
 import Todo from "@/server/models/todo";
 import dbConnect from "@/server/utils/dbConnect";
+import { useSession } from "next-auth/react";
 
 export default function Home({ todos }) {
     const [data, setData] = useState(todos);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(false);
-    
+    const {data:session,status} = useSession() ;
+    console.log(session) ;
     const deleteHandler = async (id) => {
         setLoading(true);
         try {
